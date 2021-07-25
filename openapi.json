@@ -1,0 +1,120 @@
+{
+  "openapi": "3.0.0",
+  "info": "Shortest airport route",
+  "$id": "openapi.json",
+  "servers": [],
+  "paths": {
+    "/airport-route": {
+      "get": {
+        "operationId": "getAirportRouteList",
+        "tags": ["Airport route"],
+        "description": "Get list of airport routes.",
+        "responses": {
+          "200": {
+            "description": "List of airport routes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOfAirportRoutes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/airport-route/shortest": {
+      "get": {
+        "operationId": "getShortestAirportRoute",
+        "tags": ["Airport route"],
+        "description": "Get shortest airport route from A to B. Maximum flight count is 4.",
+        "parameters": [
+          {
+            "in": "query",
+            "required": true,
+            "name": "from",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "required": true,
+            "name": "to",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Shortest airport route",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShortestAirportRoute"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ListOfAirportRoutes": {
+        "type": "object", 
+        "required": [
+          "routes"
+        ],
+        "properties": {
+          "routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AirportRoute"
+            }
+          }
+        }
+      },
+      "ShortestAirportRoute": {
+        "type": "object", 
+        "required": [
+          "routes",
+          "totalDistance"
+        ],
+        "properties": {
+          "totalDistance": {
+            "description": "Total travelling distance.",
+            "type": "string"
+          },
+          "routes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AirportRoute"
+            }
+          }
+        }
+      },
+      "AirportRoute": {
+        "type": "object", 
+        "required": [
+          "from",
+          "to",
+          "distance"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

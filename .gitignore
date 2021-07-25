@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .env
+docker/data/pgdata
+!docker/data/routes.dat
+!docker/data/airport.dat

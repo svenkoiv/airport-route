@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svenkoiv/airport-route.git"
+    "url": "git+https://github.com/svenkoiv/shortest-airport-route.git"
   },
   "author": "Sven Kõiv",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/svenkoiv/airport-route/issues"
+    "url": "https://github.com/svenkoiv/shortest-airport-route/issues"
   },
-  "homepage": "https://github.com/svenkoiv/airport-route#readme",
+  "homepage": "https://github.com/svenkoiv/shortest-airport-route#readme",
   "dependencies": {
     "bunyan": "^1.8.15",
     "bunyan-debug-stream": "^2.0.0",

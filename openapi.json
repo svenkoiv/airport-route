@@ -85,8 +85,8 @@
         ],
         "properties": {
           "totalDistance": {
-            "description": "Total travelling distance.",
-            "type": "string"
+            "description": "Total travelling distance in kilometers.",
+            "type": "number"
           },
           "routes": {
             "type": "array",

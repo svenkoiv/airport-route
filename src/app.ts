@@ -92,7 +92,7 @@ function createMyApp(): MyApp {
 	const db = createDatabase(log);
 
 	return  {
-		airportDto: new AirportDto({ db }),
+		airportDto: new AirportDto({ db, log }),
 		log,
 	};
 }
